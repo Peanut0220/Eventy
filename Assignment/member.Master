@@ -1,0 +1,226 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="member.master.cs" Inherits="Assignment.member" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Eventy | All About Event</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        @font-face {
+            font-family: "Kanit";
+            src: url("Kanit-Regular.ttf");
+        }
+
+        * {
+            font-family: "Kanit";
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .logo {
+            width: 20%;
+            height: 20%;
+            cursor: pointer;
+        }
+
+       
+        .Menu1 a.static{
+             transition: all 0.5s;
+        }
+
+   
+        .Menu1 a.static.highlighted{
+            
+             color: blue;
+ transition: all 0.5s;
+        }
+
+
+        .auto-style1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 6%;
+            background-color: rgb(7, 8, 23);
+            transition: all 0.13s;
+            width: 1320px;
+        }
+
+        .footer {
+            background-color: rgb(7, 8, 23);
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+        footer .social {
+        text-align:center;
+        padding-bottom:0px;
+        color:white;
+    }
+
+    footer .social .media{
+        font-size:20px;
+        color:inherit;
+        border:2px solid white;
+        width:40px;
+        height:40px;
+        line-height:38px;
+        display:inline-block;
+        text-align:center;
+        border-radius:50%;
+        margin: 0 8px;
+        opacity:0.7;
+        transition:0.5s;
+    }
+
+   
+    i{
+        font-size:20px;
+        
+    }
+     footer .social .media:hover{
+        opacity:1;
+        color:blue;
+        transform:translateY(-5px);
+        transition:0.5s;
+    }
+
+     footer .footerNav{
+           margin-top:20px;
+        padding:0;
+        list-style:none;
+        font-size:18px;
+        line-height:1.6;
+        display:block;
+        text-align:center;
+  width:800px;
+    margin:20px 34% 0 30%;
+      
+     }
+
+
+        .auto-style2 {
+            width: 560px;
+        }
+
+        footer .copyright{
+        margin-top:15px;
+        text-align:center;
+        font-size:13px;
+        color:#aaa;
+    }
+        .StaticMenuStyle{
+              margin-top:20px;
+        padding:0;
+        list-style:none;
+        font-size:18px;
+        line-height:1.6;
+        margin-bottom:0;
+        text-align:center;
+       
+
+        }
+        .StaticMenuItemStyle{
+            color:white;
+        text-decoration:none;
+        opacity:0.8;
+        text-align:center;
+        display:inline-block;
+        padding-left:10px;
+        }
+          .StaticMenuStyle a.static{
+               transition:all 0.5s ;
+          }
+        .StaticMenuStyle a.static.highlighted{
+            color:blue !important;
+             transition:all 0.5s ;
+        }
+
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+</head>
+<body style="height: 627px; width: 1501px;">
+    <form id="form1" runat="server">
+        <header class="auto-style1">
+
+            <asp:Image ID="logo" runat="server" Height="98px" ImageUrl="~/images/logo.png" Width="252px" CssClass="logo" />
+
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="Menu1"  ForeColor="White">
+                <DynamicMenuItemStyle HorizontalPadding="30px" />
+                <Items>
+                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/memberHome.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Event" Value="Event" NavigateUrl="~/memberEvent.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Event Pass" Value="Event Pass" NavigateUrl="~/memberEventPass.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Participate Record" Value="Participate Record" NavigateUrl="~/memberParticipateRecord.aspx"></asp:MenuItem>
+
+                </Items>
+                <StaticHoverStyle CssClass="hover" ForeColor="Blue" />
+                <StaticMenuItemStyle CssClass="menuitem" Font-Size="22px" HorizontalPadding="30px" Height="5%" Width="15%" />
+                <StaticMenuStyle VerticalPadding="10px" />
+            </asp:Menu>
+            <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" CssClass="Menu1"  ForeColor="White">
+                <DynamicMenuItemStyle HorizontalPadding="30px" />
+                <Items>
+                    <asp:MenuItem Text='<i class="fa fa-bell"></i>' NavigateUrl="memberNotification.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text='<i class="fa fa-shopping-cart"></i>' NavigateUrl="memberCart.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text='<i class="fa-solid fa-circle-user"></i>' NavigateUrl="memberProfile.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text='<i class="fa-solid fa-sign-out"></i>' NavigateUrl="logout.aspx"></asp:MenuItem>
+                                        
+
+                </Items>
+                <StaticHoverStyle CssClass="hover" ForeColor="Blue" BorderColor="Blue" />
+                <StaticMenuItemStyle CssClass="menuitem" Font-Size="22px" HorizontalPadding="20px" />
+                <StaticMenuStyle VerticalPadding="10px" />
+            </asp:Menu>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer class="footer">
+            <asp:Image ID="logo0" runat="server" Height="98px" ImageUrl="~/images/logo.png" Width="252px" CssClass="logo" />
+
+
+            <div class="social">
+                <asp:HyperLink CssClass="media" ID="HyperLink1" runat="server" NavigateUrl="https://www.instagram.com/"><i class="fab fa-instagram"></i></asp:HyperLink>
+                 <asp:HyperLink CssClass="media" ID="HyperLink2" runat="server" NavigateUrl="https://www.youtube.com/"><i class="fab fa-youtube"></i></asp:HyperLink>
+                 <asp:HyperLink CssClass="media" ID="HyperLink4" runat="server" NavigateUrl="https://www.facebook.com/"><i class="fab fa-facebook"></i></asp:HyperLink>
+                 <asp:HyperLink CssClass="media" ID="HyperLink5" runat="server" NavigateUrl="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></asp:HyperLink>
+                 <asp:HyperLink CssClass="media" ID="HyperLink6" runat="server" NavigateUrl="https://www.discord.com/"><i class="fab fa-discord"></i></asp:HyperLink>
+                 <asp:HyperLink CssClass="media" ID="HyperLink7" runat="server" NavigateUrl="https://www.twitch.com/"><i class="fab fa-twitch"></i></asp:HyperLink>
+            </div>
+            <div class="footerNav">
+            <asp:Menu StaticMenuStyle-CssClass="StaticMenuStyle"
+        StaticMenuItemStyle-CssClass="StaticMenuItemStyle" ID="Menu3" runat="server" Orientation="Horizontal">
+                <Items>
+
+                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="memberHome.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Event" Value="Event" NavigateUrl="memberEvent.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Event Pass" Value="Event Pass" NavigateUrl="memberEventPass.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Participate Record" Value="Participate Record" NavigateUrl="memberParticipateRecord.aspx"></asp:MenuItem>
+
+                </Items>
+                <StaticMenuItemStyle CssClass="StaticMenuItemStyle" HorizontalPadding="30px" />
+                <StaticMenuStyle CssClass="StaticMenuStyle" />
+            </asp:Menu>
+               </div>
+            <p class="copyright">
+                &#169; 2023, Eventy | TARUMT, All rights reserved
+            </p>
+        </footer>
+    </form>
+    <script>
+        function confirmPost() {
+            alert("Logout Successfully");
+
+            return true;
+
+        }
+    </script>
+</body>
+</html>

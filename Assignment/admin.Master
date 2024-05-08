@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Assignment.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="admin.css" rel="stylesheet" />
+    <title>Eventy | All About Event</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- =============== Navigation ================ -->
+            <div class="container">
+                <div class="navigation">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <asp:Image ID="logo" runat="server" Height="90px" ImageUrl="~/images/logo.png" Width="250px" CssClass="logo" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a style="margin-top:2%;" href="staffHome.aspx">
+                                <span class="icon">
+                                    <ion-icon name="home-outline"></ion-icon>
+                                </span>
+                                <span class="title">Home</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffDashboard.aspx">
+                                <span class="icon">
+                                    <ion-icon name="stats-chart-outline"></ion-icon>
+                                </span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffEvent.aspx">
+                                <span class="icon">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                </span>
+                                <span class="title">Event</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffPass.aspx">
+                                <span class="icon">
+                                    <ion-icon name="ticket-outline"></ion-icon>
+                                </span>
+                                <span class="title">Pass</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffMember.aspx">
+                                <span class="icon">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                </span>
+                                <span class="title">Member</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffParticipantHistory.aspx">
+                                <span class="icon">
+                                    <ion-icon name="archive-outline"></ion-icon>
+                                </span>
+                                <span class="title">Participant History</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffComment.aspx">
+                                <span class="icon">
+                                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                                </span>
+                                <span class="title">Comment and Rating</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffNotification.aspx">
+                                <span class="icon">
+                                    <ion-icon name="notifications-outline"></ion-icon>
+                                </span>
+                                <span class="title">Notification</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffPromoCode.aspx">
+                                <span class="icon">
+                                    <ion-icon name="cash-outline"></ion-icon>
+                                </span>
+                                <span class="title">Promo Code</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staff.aspx">
+                                <span class="icon">
+                                    <ion-icon name="people-circle-outline"></ion-icon>
+
+                                </span>
+                                <span class="title">Staff</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="staffProfile.aspx">
+                                <span class="icon">
+                                    <ion-icon name="person-circle-outline"></ion-icon>
+                                </span>
+                                <span class="title">Profile</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="logout.aspx">
+                                <span class="icon">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </span>
+                                <span class="title">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ========================= Main ==================== -->
+                <div class="main">
+                    <div class="topbar">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+
+                        <div class="user">
+                            <asp:ImageButton ID="ImageButton1" CssClass="profile" runat="server" ImageUrl="~/images/profile-icon.png" OnClick="ImageButton1_Click" PostBackUrl="~/staffProfile.aspx" />
+
+                        </div>
+                    </div>
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- =========== Scripts =========  -->
+    <script src="adminMain.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
